@@ -54,6 +54,7 @@ pub fn app() -> Html {
                         <option value="jedi">{ "Jedi" }</option>
                         <option value="sith">{ "Sith" }</option>
                     </select>   
+                    <button>{ "Enter Bounty" }</button>
                 </form>
             </header>
             <main>
