@@ -37,7 +37,7 @@ pub fn app() -> Html {
             <header>
                 <form id="newBountyForm" name="newBounty">
                     <label>{ "First Name" }</label>
-                    <input type="text" name="firstName" placeholder="First Name" />
+                    <input type="text" value={input.clone().to_string()} name="firstName" placeholder="First Name" {oninput}/>
                     <label>{ "Last Name" }</label>
                     <input type="text" name="lastName" placeholder="Last Name" />
                     <label>{ "Living" }</label>
@@ -54,12 +54,11 @@ pub fn app() -> Html {
                         <option value="jedi">{ "Jedi" }</option>
                         <option value="sith">{ "Sith" }</option>
                     </select>   
-                    <button>{ "Enter Bounty" }</button>
+                    <button{onclick}>{ "Enter Bounty" }</button>
                 </form>
             </header>
             <main>
-                <input type="text" value={input.clone().to_string()} {oninput} />
-                <button{onclick}>{ "add todo" }</button>
+
                 <ul>
                     { for todos.iter().map(|todo| html! { <li>{ todo }</li> }) }
                 </ul>
